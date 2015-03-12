@@ -17,6 +17,9 @@
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(factory);
+	} else if (typeof exports === 'object') {
+		// CommonJS
+		module.exports = factory();
 	} else {
 		// Browser global
 		root.ScrollMagic = factory();
